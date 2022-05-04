@@ -35,7 +35,7 @@ namespace Lesson03.Conditions.Loops
                 case 5:
                     Console.WriteLine($"a is 5");
                     break;
-                case 6:
+                case 6:sldfhdsh fkshdk hdkfhk fjdh gkdfh
                     Console.WriteLine($"a is 6");
                     break;
                 case 7:
