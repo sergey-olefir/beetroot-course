@@ -8,6 +8,9 @@
             int[] array1 = new[] { 1, 2, 3, 4, 5 }; // 5 items
             int[] array2 = { 1, 2, 3, 4, 5 }; // 5 items
 
+
+            int[] newArray = { 1, 2, 3 };
+
             array1[0] = 1;
             var index = new Index(0);
             array1[index] = 1;
