@@ -8,21 +8,60 @@ namespace Lesson08.Text
     {
         static void Main(string[] args)
         {
-            string filePath = "Phone book.csv";
+            Console.WriteLine(new Guid("6719D7B8-75FD-4F01-8FAC-2B1450733AB3"));
+            Console.WriteLine(Guid.Parse("6719D7B8-75FD-4F01-8FAC-2B1450733AB3"));
 
-            string[] content = File.ReadAllLines(filePath);
+            Console.WriteLine(Guid.NewGuid());
+            string filePath = "Phone book.csv";
+            //string filePath = null;
+
+            string[] content = null;
+            try
+            {
+                try
+                {
+                    content = File.ReadAllLines(filePath);
+                    // print file content
+                    foreach (var item in content)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                catch (ArgumentNullException exception)
+                {
+                    throw new Exception(exception.Message);
+                }
+            }
+            catch (FileNotFoundException exception)
+            {
+                Console.WriteLine($"Error: {exception.Message}, type: {exception.GetType()}");
+                content = Array.Empty<string>();
+            }
+            catch (ArgumentNullException exception)
+            {
+                Console.WriteLine($"Error: {exception.Message}, type: {exception.GetType()}");
+                content = Array.Empty<string>();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine($"Error: {exception.Message}, type: {exception.GetType()}");
+                content = Array.Empty<string>();
+            }
+            catch
+            {
+                Console.WriteLine($"Error");
+                content = Array.Empty<string>();
+            }
+            finally
+            {
+                Console.WriteLine("Finally block");
+            }
 
             // (int a, int b) tuple;
             //
             // tuple.b = 3;
             // tuple.a = 1;
             // int c = tuple.a + tuple.b;
-
-            // print file content
-            foreach (var item in content)
-            {
-                Console.WriteLine(item);
-            }
 
             // print deserialized data
             foreach ((string name, int number) item in Deserialize(content))
@@ -34,8 +73,21 @@ namespace Lesson08.Text
 
             var newRecord = (name: "Nick", number: 1212);
             Add(ref phoneBook, newRecord);
-            Update(phoneBook, newRecord, 3);
-            Delete(ref phoneBook, 0);
+
+            var indexToUpdate = -1;
+
+            try
+            {
+                if (indexToUpdate > 0 && phoneBook.Length > indexToUpdate)
+                {
+                    Update(phoneBook, newRecord, indexToUpdate);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error type: {e.GetType()}");
+            }
+            //Delete(ref phoneBook, 0);
 
             // print serialized data
             var serializedBook = Serialize(phoneBook);
@@ -44,7 +96,46 @@ namespace Lesson08.Text
                 Console.WriteLine(item);
             }
 
-            File.WriteAllLines(filePath, serializedBook);
+            //File.WriteAllLines(filePath, serializedBook);
+            StreamReader reader;
+
+            try
+            {
+                using (reader = new StreamReader(filePath))
+                {
+                    try
+                    {
+                        reader.Peek();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Error");
+                        throw;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            try
+            {
+                reader = new StreamReader(filePath);
+                try
+                {
+                    reader.Peek();
+                }
+                catch
+                {
+                    Console.WriteLine("Error");
+                }
+            }
+            finally
+            {
+                reader.Dispose();
+            }
         }
 
         private static void Add(ref (string name, int number)[] content, (string name, int number) newItem)
@@ -57,7 +148,15 @@ namespace Lesson08.Text
 
         private static void Update((string name, int number)[] content, (string name, int number) updatedItem, int index)
         {
-            content[index] = updatedItem;
+            try
+            {
+                content[index] = updatedItem;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine($"Can't update record with index {index}");
+                throw;
+            }
         }
 
         private static void Delete(ref (string name, int number)[] content, int index)
