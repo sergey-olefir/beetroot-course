@@ -7,7 +7,10 @@
             Person person = new Person();
             person.FirstName = "Serhii";
             person.LastName = "Olefir";
-            person.Age = 12;
+            person.PropAge = 30;
+            Console.WriteLine(person.PropAge);
+
+            person.SetAge(12);
 
             // var fName = "Se";
             // var lName = "Ol";
@@ -19,9 +22,10 @@
             var fourthPerson = new Person
             {
                 FirstName = "Nick",
-                LastName = "Someone",
-                Age = 30
+                LastName = "Someone"
             };
+            
+            fourthPerson.SetAge(30);
 
             Print(person);
             Print(anotherPerson);
@@ -38,7 +42,7 @@
             var phoneBook = new PhoneBook(records);
             foreach (var item in phoneBook.Records)
             {
-                Console.WriteLine(item.FullInfo());
+                Console.WriteLine(item.FullInfo);
             }
         }
 
