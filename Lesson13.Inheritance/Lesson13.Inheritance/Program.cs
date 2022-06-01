@@ -66,6 +66,7 @@ namespace Lesson13.Inheritance
 
             object obj1 = 4;
             object obj2 = "якась стрічка";
+            obj2 = new Cat();
             
             Console.WriteLine(obj1.ToString());
             Console.WriteLine(obj2.ToString());
