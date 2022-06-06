@@ -22,6 +22,8 @@ namespace Lesson16.Generics
             throw new NotImplementedException();
         }
 
+        капустянська 2ʼ1
+
         public void Clear()
         {
             throw new NotImplementedException();
