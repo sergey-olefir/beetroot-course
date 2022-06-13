@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 
 namespace Lesson19.Delegates
 {
@@ -54,6 +55,14 @@ namespace Lesson19.Delegates
                 Console.Write($"{item} ");
             }
             Console.WriteLine();
+
+            var timer = new Timer();
+            timer.Interval = 1000;
+            timer.Interval = TimeSpan.FromMinutes(0.5).TotalMilliseconds;
+            timer.Interval = TimeSpan.FromSeconds(1).TotalMilliseconds;
+            timer.Elapsed += (_, eventArgs) => Console.WriteLine($"Timer elapsed at {eventArgs.SignalTime}");
+            timer.Start();
+            Console.ReadKey();
         }
 
         // Func<int, string>
