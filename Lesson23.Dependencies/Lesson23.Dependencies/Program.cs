@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Lesson23.Domain;
 
 namespace Lesson23.Dependencies
 {
@@ -6,7 +6,8 @@ namespace Lesson23.Dependencies
     {
         public static void Main()
         {
-            Console.WriteLine();
+            var service = new RoomService();
+            var rooms = service.GetAll();
         }
     }
 }

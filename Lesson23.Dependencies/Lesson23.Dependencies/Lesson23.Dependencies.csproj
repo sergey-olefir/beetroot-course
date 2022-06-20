@@ -7,4 +7,9 @@
         <Nullable>disable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Lesson23.Contracts\Lesson23.Contracts.csproj" />
+        <ProjectReference Include="..\Lesson23.Domain\Lesson23.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
