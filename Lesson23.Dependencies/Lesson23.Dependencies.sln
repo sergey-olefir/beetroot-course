@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.Dependencies", "Lesson23.Dependencies\Lesson23.Dependencies.csproj", "{32750ABD-1B27-4E24-9244-31E0F757FE11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.Domain", "Lesson23.Domain\Lesson23.Domain.csproj", "{36197BB7-C60A-47D6-8009-6D5AD35721CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.Contracts", "Lesson23.Contracts\Lesson23.Contracts.csproj", "{195537E0-40EA-4B76-B318-9766469D9022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32750ABD-1B27-4E24-9244-31E0F757FE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32750ABD-1B27-4E24-9244-31E0F757FE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32750ABD-1B27-4E24-9244-31E0F757FE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32750ABD-1B27-4E24-9244-31E0F757FE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36197BB7-C60A-47D6-8009-6D5AD35721CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36197BB7-C60A-47D6-8009-6D5AD35721CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36197BB7-C60A-47D6-8009-6D5AD35721CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36197BB7-C60A-47D6-8009-6D5AD35721CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195537E0-40EA-4B76-B318-9766469D9022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195537E0-40EA-4B76-B318-9766469D9022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195537E0-40EA-4B76-B318-9766469D9022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195537E0-40EA-4B76-B318-9766469D9022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
