@@ -8,12 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Lesson23.Contracts\Lesson23.Contracts.csproj" />
-        <ProjectReference Include="..\Lesson23.Domain\Lesson23.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="CommandLineParser" Version="2.9.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
     </ItemGroup>
 
 </Project>

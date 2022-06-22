@@ -28,6 +28,14 @@ namespace Lesson22.Reflection
         public int Value { get; }
     }
 
+    /*
+     * {
+     *      "name": "Vasyl",
+     *      "birthday": "01/01/2001",
+     *      "age": 10
+     * }
+     */
+
     public class User
     {
         public User()
