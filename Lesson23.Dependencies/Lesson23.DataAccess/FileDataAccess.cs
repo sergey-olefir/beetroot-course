@@ -2,9 +2,16 @@ using Lesson23.Contracts;
 
 namespace Lesson23.DataAccess
 {
-    public class FileDataAccess
+    public interface IDataAccess
+    {
+        List<Room> GetAll();
+        void WriteAll(List<Room> rooms);
+    }
+
+    public class FileDataAccess : IDataAccess
     {
         private string filePath = "rooms.file";
+
         public List<Room> GetAll()
         {
             using (Stream stream = File.Open(this.filePath, FileMode.Open))

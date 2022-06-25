@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.Contracts", "Lesso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.DataAccess", "Lesson23.DataAccess\Lesson23.DataAccess.csproj", "{150D5B3D-9FE9-4987-80DC-C02715B91FB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson23.UnitTests", "Lesson23.UnitTests\Lesson23.UnitTests.csproj", "{DF5DFED5-BEDC-4C5C-BBA7-C555EA026B4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{150D5B3D-9FE9-4987-80DC-C02715B91FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150D5B3D-9FE9-4987-80DC-C02715B91FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{150D5B3D-9FE9-4987-80DC-C02715B91FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5DFED5-BEDC-4C5C-BBA7-C555EA026B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5DFED5-BEDC-4C5C-BBA7-C555EA026B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5DFED5-BEDC-4C5C-BBA7-C555EA026B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5DFED5-BEDC-4C5C-BBA7-C555EA026B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
