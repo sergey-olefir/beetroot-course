@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Lesson28.EF.DataAccess;
-using Lesson28.EF.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lesson28.EF
@@ -23,18 +22,25 @@ namespace Lesson28.EF
                     Console.WriteLine($"\t{product.Title}, price {product.Price}");
                 }
             }
+            //
+            // await context.Categories.AddAsync(new Category
+            // {
+            //     Title = "Gaming",
+            //     Products = new List<Product>
+            //     {
+            //         new Product { Title = "PS5", Price = 123 },
+            //         new Product { Title = "xBox", Price = 0 }
+            //     }
+            // });
+            //
+            // await context.SaveChangesAsync();
 
-            await context.Categories.AddAsync(new Category
+            var products = await context.Products.Where(x => x.Category.Title == "Gaming").ToListAsync();
+            Console.WriteLine("Gaming products");
+            foreach (var product in products)
             {
-                Title = "Gaming",
-                Products = new List<Product>
-                {
-                    new Product { Title = "PS5", Price = 123 },
-                    new Product { Title = "xBox", Price = 0 }
-                }
-            });
-
-            await context.SaveChangesAsync();
+                Console.WriteLine(product.Title);
+            }
         }
     }
 }
