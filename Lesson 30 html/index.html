@@ -1,63 +1,147 @@
 <html>
-    <head>
-        <title>Beetroot</title>
-        <style>
-            body {
-                padding-left: 100px;
-                padding-top: 25px;
-            }
 
-            p {
-                line-height: 30px;
-            }
+<head>
+    <title>Beetroot</title>
+    <style>
+        body {
+            padding-left: 100px;
+            padding-top: 25px;
+        }
 
-            .list-square {
-                list-style: square;
-            }
+        p {
+            line-height: 30px;
+        }
 
-            .list-circle {
-                list-style: circle;
-            }
+        .list-square {
+            list-style: square;
+        }
 
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-                padding: 10px;
-                text-align: left;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Beetroot</h1>
-        <p>Бітрут - <b>чудова</b> школа для програмістів! <br />
-            В Бітруті є все, навіть <i>печеньки</i></p>
+        .list-circle {
+            list-style: circle;
+        }
 
-        <h3>Що ще там є?</h3>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
 
-        <ul class="list-square">
-            <li>пітон</li>
-            <li>front-ent</li>
-            <li>.NET</li>
-            <li>...</li>
-        </ul>
+        .link:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: aqua;
+        }
+    </style>
 
-        <h3>Хто там ще там є?</h3>
-        <ul class="list-circle">
-            <li>Гарні студенти</li>
-            <li>Круті менеджери</li>
-        </ul>
+    <script>
+        function ArraySort() {
+            var array1 = [1, 7, 4, 3, 6, 7, 8, 2];
+            console.log(array1);
 
-        <table>
-            <thead>
-                <tr><th colspan="3">Кращі студенти</th></tr>
-                <tr><th>Імя</th><th>Фамилія</th><th>Середня оцінка</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><u>Сергій</u></td><td>Олефір</td><td>5</td></tr>
-                <tr><td>Андрій</td><td>Микитенко</td><td>5</td></tr>
-                <tr><td><span style="font-style: italic;">Денис</span></td><td>Рябуха</td><td>5</td></tr>
-                <tr><td><i>Надя</i></td><td>Блажкун</td><td>5</td></tr>
-            </tbody>
-        </table>
-    </body>
+            for (var i = 0; i < array1.length; i++)
+                for (var j = 0; j < array1.length - 1; j++) {
+                    if (array1[j] > array1[j + 1]) {
+                        var temp = array1[j];
+                        array1[j] = array1[j + 1];
+                        array1[j + 1] = temp;
+                    }
+                }
+
+            console.log(array1);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var body = document.body;
+            console.log(body);
+
+            var items = body.getElementsByTagName("li");
+            //console.log(items);
+
+            var itemToClick = document.getElementById("toClick");
+            console.log(itemToClick);
+
+            clickCounter = 0;
+            itemToClick.addEventListener("click", function () {
+                console.log("Button has been clicked " + clickCounter++ + " times");
+
+                var newItem = document.createElement("li");
+                newItem.innerText = "new item";
+                document.getElementById("other-list").appendChild(newItem);
+            })
+
+            itemToClick.addEventListener("mouseover", function () {
+                this.style.cursor = "pointer";
+                this.style.textDecoration = "underline";
+                if (user == "Вася"){
+                    this.style.color = "blue";
+                }
+            })
+
+            itemToClick.addEventListener("mouseleave", function () {
+                this.style.textDecoration = null;
+                this.style.color = null;
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Beetroot</h1>
+    <p>Бітрут - <b>чудова</b> школа для програмістів! <br />
+        В Бітруті є все, навіть <i>печеньки</i></p>
+
+    <h3 class="link">Що ще там є?</h3>
+
+    <ul class="list-square">
+        <li>пітон</li>
+        <li>front-ent</li>
+        <li>.NET</li>
+        <li>...</li>
+    </ul>
+
+    <h3 id="toClick">Хто там ще там є?</h3>
+    <ul id="other-list" class="list-circle">
+        <li>Гарні студенти</li>
+        <li>Круті менеджери</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Кращі студенти</th>
+            </tr>
+            <tr>
+                <th>Імя</th>
+                <th>Фамилія</th>
+                <th>Середня оцінка</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="click">
+                <td><u>Сергій</u></td>
+                <td>Олефір</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Андрій</td>
+                <td>Микитенко</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td><span style="font-style: italic;">Денис</span></td>
+                <td>Рябуха</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td><i>Надя</i></td>
+                <td>Блажкун</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
 </html>
